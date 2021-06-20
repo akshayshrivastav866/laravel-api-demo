@@ -2,18 +2,17 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\loansController;
+use App\Http\Controllers\usersController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+Route::middleware( 'auth:api' )->get( '/user', function ( Request $request )
+	{
+		return $request->user();
+	} );
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Pre login APIs
+Route::post( 'register', [ usersController::class, 'createUser' ] );
+Route::post( 'login', [ usersController::class, 'checkUser' ] );
+
+// Post Login APIs
+Route::post( 'apply', [ loansController::class, 'apply' ] );
