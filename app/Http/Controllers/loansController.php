@@ -15,7 +15,6 @@ class loansController extends Controller
 						return;
 					}
 
-				// First we will create put model object which we have imported on Line 6
 				$loans = new Loan();
 
 				// To store data in DB Syntax ( $modal_object->db_columns_name = $request->field_name )
@@ -34,5 +33,15 @@ class loansController extends Controller
 					{
 						return [ $this->finalResponse( 'error', 'Unable to save!', 'Loan application denied.' ) ];
 					}
+			}
+
+		function payLoanEMI( Request $request )
+			{
+				if ( ! $this->doesUserExist( $request->username, $request->secret ) )
+					{
+						return;
+					}
+
+				
 			}
 	}
