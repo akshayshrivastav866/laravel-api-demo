@@ -161,7 +161,7 @@ class loansController extends Controller
 
 										if ( $meta_update_result )
 											{
-												return [ $this->finalResponse( 'success', 'EMI Paid successfully!', 'Next EMI Payment on or before .' ) ];
+												return [ $this->finalResponse( 'success', 'EMI Paid successfully!', 'Next EMI Payment on or before ' . $next_payment_date ) ];
 											}
 										else
 											{
