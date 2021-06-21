@@ -155,7 +155,7 @@ class loansController extends Controller
 									{
 										$pending_amount = ( $meta_result->pending_amount - $meta_result->installment_amount );
 										$prev_payment_date = date( 'Y-m-d H:i:s', strtotime( '+7 day' ) );
-										$next_payment_date = date( $prev_payment_date, strtotime( '+7 day' ) );
+										$next_payment_date = date( 'Y-m-d H:i:s', strtotime( '+7 day', strtotime( $prev_payment_date ) ) );
 
 										$meta_update_result = PaymentMeta::where( [ 'id' => $request->meta_id ] )->update( [ 'status' => 1, 'last_repayment_date' => $prev_payment_date, 'next_repayment_date' => $next_payment_date, 'pending_amount' => $pending_amount ] );
 

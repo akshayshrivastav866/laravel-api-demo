@@ -21,7 +21,7 @@ If you are using POSTMAN. Please follow the below process
 
 ### **List of APIs**
 
-PN: My local server was http://127.0.0.1:9090. You may change the settings as per you laravel environment
+PN: My local server was http://127.0.0.1:9090 You may change the settings as per you laravel environment
 
 1. http://127.0.0.1:9090/api/register ( Pre Login )
 2. http://127.0.0.1:9090/api/login ( Pre Login )
