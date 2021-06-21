@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Loan extends Model
+class Repayment extends Model
 	{
 		// public $timestamps = false;
 	}
