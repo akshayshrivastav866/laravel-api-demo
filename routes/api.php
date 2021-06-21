@@ -15,6 +15,6 @@ Route::post( 'register', [ usersController::class, 'createUser' ] );
 Route::post( 'login', [ usersController::class, 'checkUser' ] );
 
 // Post Login APIs
-Route::post( 'applyLoan', [ loansController::class, 'applyforLoan' ] );
-Route::post( 'approveLoan', [ loansController::class, 'approveLoan' ] );
-Route::post( 'payEMI', [ loansController::class, 'payLoanEMI' ] );
+Route::post( 'applyloan', [ loansController::class, 'applyforLoan' ] );
+Route::post( 'approveloan', [ loansController::class, 'approveLoan' ] );
+Route::post( 'payemi', [ loansController::class, 'payLoanEMI' ] );
